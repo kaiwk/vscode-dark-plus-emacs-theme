@@ -76,6 +76,7 @@
       (type              "#4ec9b0")
       (var               "#9cdcfe")
       (warning           "#f16969")
+      (cursor-color      "#CB2431")
 
       ;; standardized palette
       (ms-yellow         "#dcdcaa")
@@ -120,12 +121,12 @@
    `(highlight                                ((,class (:foreground ,fg3 :background ,bg3))))
    `(hl-line                                  ((,class (:background ,bg3))))
    `(fringe                                   ((,class (:background ,bg1 :foreground ,fg4))))
-   `(cursor                                   ((,class (:background ,fg1))))
+   `(cursor                                   ((,class (:background ,cursor-color))))
    `(show-paren-match-face                    ((,class (:background ,warning))))
    `(show-paren-match                         ((t (:foreground ,fg3 :background ,bg4 :bold t))))
    `(show-paren-mismatch                      ((t (:background ,warning))))
    `(isearch                                  ((,class (:bold nil :foreground ,accent :background ,bg4))))
-   `(vertical-border                          ((,class (:foreground ,bg3))))
+   `(vertical-border                          ((,class (:foreground ,fg1))))
    `(minibuffer-prompt                        ((,class (:foreground ,ms-bluegreen :weight normal))))
    `(default-italic                           ((,class (:italic t))))
    `(link                                     ((,class (:foreground ,const :underline t))))
@@ -141,6 +142,8 @@
    `(mode-line-buffer-id                      ((,class (:bold nil :foreground ,accent :background nil))))
    `(mode-line-highlight                      ((,class (:foreground ,keyword :box nil :weight normal))))
    `(mode-line-emphasis                       ((,class (:foreground ,fg1))))
+   `(mini-modeline-mode-line                  ((,class (:background ,fg1 :height 0.1 :box nil))))
+   `(header-line                              ((,class (:bold nil :foreground ,fg4 :background ,mode-line-bg))))
 
    `(company-preview-common                   ((t (:foreground unspecified :background ,bg2))))
    `(company-scrollbar-bg                     ((t (:background ,bg2))))
@@ -459,6 +462,7 @@
    `(ivy-modified-buffer                      ((t (:inherit default :foreground ,var))))
    `(ivy-virtual                              ((t (:inherit default :foreground ,doc-alt))))
    `(ivy-posframe                             ((t (:background "#252526"))))
+   `(ivy-posframe-border                      ((t (:background ,fg0))))
 
    `(counsel-key-binding                      ((t (:foreground ,var))))
 
@@ -501,7 +505,10 @@
    `(hl-todo                                  ((t (:inverse-video t))))
    `(highlight-numbers-number                 ((t (:foreground ,numeric))))
    `(highlight-operators-face                 ((t (:inherit default))))
-   `(highlight-symbol-face                    ((t (:background "#343a40"))))))
+   `(highlight-symbol-face                    ((t (:background "#343a40"))))
+
+   ;; perspective
+   `(persp-selected-face                      ((t (:weight bold :foreground ,keyword))))))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
